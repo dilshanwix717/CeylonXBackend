@@ -2,7 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors')
 const { mongoose } = require('mongoose')
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const Serverless = require('serverless-http');
 const app = express();
 dotenv.config();
 
@@ -33,3 +34,4 @@ app.use('/', require('./routes/projectRequestRoutes'))
 
 const port = 8000;
 app.listen(port, () => console.log(`Server is running on port ${port}`))
+module.exports.handler = Serverless(app);
