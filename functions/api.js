@@ -33,5 +33,5 @@ app.use('/', require('./routes/testimonialRoutes'))
 app.use('/', require('./routes/projectRequestRoutes'))
 
 const port = 8000;
-app.listen(port, () => console.log(`Server is running on port ${port}`))
+//app.listen(port, () => console.log(`Server is running on port ${port}`))
 module.exports.handler = Serverless(app);
