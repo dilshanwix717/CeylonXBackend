@@ -32,6 +32,7 @@ app.use('/', require('./routes/workRoutes'))
 app.use('/', require('./routes/testimonialRoutes'))
 app.use('/', require('./routes/projectRequestRoutes'))
 
-const port = 8000;
-//app.listen(port, () => console.log(`Server is running on port ${port}`))
-module.exports.handler = Serverless(app);
+const port = process.env.PORT || 8000;  // Use Heroku's port or fallback to 8000 for local development
+app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+//module.exports.handler = Serverless(app);
